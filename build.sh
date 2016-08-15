@@ -7,7 +7,7 @@ GLIBC_SHA256SUM=94efeb00e4603c8546209cefb3e1a50a5315c86fa9b078b6fad758e187ce13e9
 SRC=$PWD/src
 OUT=$PWD/out
 
-mkdir -p $SRC/build
+mkdir -p $SRC/build $OUT
 
 curl -OL http://ftp.gnu.org/gnu/libc/glibc-$GLIBC_VERSION.tar.xz
 echo "$GLIBC_SHA256SUM  glibc-$GLIBC_VERSION.tar.xz" | sha256sum -c
@@ -22,4 +22,4 @@ cd $SRC/build
     --disable-sanity-checks
 make
 
-mv $SRC/build $OUT
+mv $SRC/build/* $OUT
