@@ -5,11 +5,11 @@ image_resource:
   source: {repository: quay.io/desource/fedora, tag: build}
 
 run:
-  path: src/build.sh
+  path: ci/build.sh
     
 inputs:
-  - name: glibc-src
-    path: src
+  - name: glibc-ci
+    path: ci
 
 outputs:
   - name: glibc
